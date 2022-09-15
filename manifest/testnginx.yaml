@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testdeploy  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testdeploy
+  template:
+    metadata:
+      labels:
+        app: testdeploy
+    spec:
+      containers:
+      - name: test-cont
+        image: saroj2052/node-test:840e53e3b3af23fd0a6852fd162822beedcf0a50
+        ports:
+        - containerPort: 6080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 6080
+  selector:
+    app: testdeploy
+
