@@ -13,9 +13,11 @@ spec:
       labels:
         app: testdeploy
     spec:
+      imagePullSecrets: 
+      - name: pull-acr
       containers:
       - name: test-cont
-        image: saroj2052/node-test:840e53e3b3af23fd0a6852fd162822beedcf0a50
+        image: acrpubcon.azurecr.io/node-test:9a80084154dfbd3f66b558460679d1d336e6a8de
         ports:
         - containerPort: 6080
 ---
