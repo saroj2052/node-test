@@ -17,7 +17,7 @@ spec:
       - name: pull-acr
       containers:
       - name: test-cont
-        image: acrpubcon.azurecr.io/node-test:d4ac4126fb6c16492dbff86e4a475dc6c61b17b7
+        image: acrpubcon.azurecr.io/node-test:c4c0c0ff6bab3b8ea1d823aa2a9639ea7108a1de
         ports:
         - containerPort: 6080
 ---
