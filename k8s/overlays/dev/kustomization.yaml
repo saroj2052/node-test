@@ -7,4 +7,4 @@ resources:
 - ../../base
 images:
 - name: acrpubcon.azurecr.io/node-test
-  newTag: 9a80084154dfbd3f66b558460679d1d336e6a8de
+  newTag: ffd17d057e1f7bb837e987ccf5dccb2e53310be7
