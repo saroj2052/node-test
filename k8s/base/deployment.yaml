@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testdeploy
+  namespace: default  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testdeploy
+  template:
+    metadata:
+      labels:
+        app: testdeploy
+    spec:
+      imagePullSecrets: 
+      - name: pull-acr
+      containers:
+      - name: test-cont
+        image: acrpubcon.azurecr.io/node-test:hello
+        ports:
+        - containerPort: 6080
