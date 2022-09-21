@@ -25,8 +25,10 @@ apiVersion: v1
 kind: Service
 metadata:
   name: test
-  namespace: default
 spec:
   type: ClusterIP
   ports:
   - port: 80
+    targetPort: 6080
+  selector:
+    app: testdeploy
